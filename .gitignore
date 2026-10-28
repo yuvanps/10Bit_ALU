@@ -1,0 +1,7 @@
+# Third-party reference design (kept locally for comparison only)
+ALU/
+
+# Generated build products
+build/
+*.vcd
+*.vvp
