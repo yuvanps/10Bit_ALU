@@ -1,0 +1,20 @@
+# Generic (technology-independent) synthesis of alu_top.
+# Run after scripts/read_rtl.ys and `chparam -set USE_RCA <0|1> alu_top`.
+# Output cells are Yosys internal gates ($_AND_, $_XOR_, $_MUX_, $_SDFFE_...),
+# which are not an area or timing measure for any real technology.
+
+hierarchy -check -top alu_top
+
+# Coarse-grain part of `synth`: proc, flatten, opt, wreduce, alumacc, share...
+# Stop before techmap so arithmetic cells ($alu, $shl, $eq ...) are visible.
+synth -top alu_top -flatten -run begin:fine
+log === STAT_COARSE ===
+stat
+
+# Fine-grain part: techmap to gates, ABC logic optimization, cleanup.
+synth -top alu_top -flatten -run fine:
+check -assert
+log === STAT_FINAL ===
+stat
+log === LTP ===
+ltp -noff

@@ -1,0 +1,8 @@
+# Per-unit cell breakdown of alu_top (behavioral config), hierarchy KEPT.
+# Without flattening, ABC cannot optimize across module boundaries, so the
+# total is higher than the flattened result; use it only to see where the
+# logic goes, not as the design's size.
+hierarchy -check -top alu_top
+synth -top alu_top
+log === STAT_HIER ===
+stat

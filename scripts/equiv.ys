@@ -1,0 +1,31 @@
+# Formal equivalence proofs (SAT-based, all input values, DATA_WIDTH = 10).
+#
+# Proof 1: ripple_carry_adder == {cout, sum} = a + b + cin   (combinational)
+# Proof 2: alu_top USE_RCA=0 == alu_top USE_RCA=1            (sequential)
+#   Base case: both designs start in the all-zero state, which is exactly the
+#   state their synchronous reset produces (-set-init-zero). Every register
+#   drives an output, so 1-step temporal induction (-tempinduct) then closes
+#   the proof for ALL reachable states, not just a bounded number of cycles.
+
+script scripts/read_rtl.ys
+read_verilog formal/equiv_wrappers.v
+hierarchy -check
+proc
+flatten
+# proc_rom turns the 32-entry legal-opcode case into a ROM; memory maps it
+# back to plain logic, which the SAT solver can import.
+memory
+opt_clean
+
+log
+log ===== Proof 1: ripple_carry_adder vs behavioral a+b+cin =====
+miter -equiv -make_assert -flatten ref_10 rca_10 miter_adder
+sat -verify -prove-asserts -show-ports miter_adder
+
+log
+log ===== Proof 2: alu_top behavioral vs structural adder =====
+miter -equiv -make_assert -flatten alu_behav alu_struct miter_alu
+sat -verify -prove-asserts -tempinduct -set-init-zero -seq 1 miter_alu
+
+log
+log EQUIVALENCE PROVEN

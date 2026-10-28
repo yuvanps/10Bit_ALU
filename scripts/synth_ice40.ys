@@ -1,0 +1,15 @@
+# iCE40 FPGA mapping of alu_top (Yosys built-in synth_ice40 flow).
+# Run after scripts/read_rtl.ys and `chparam -set USE_RCA <0|1> alu_top`.
+# Output: mapped iCE40 primitives (SB_LUT4, SB_CARRY, SB_DFF*). This is a
+# resource count before place-and-route; it says nothing about Fmax.
+
+hierarchy -check -top alu_top
+synth_ice40 -top alu_top    # flattens by default
+check -assert
+log === STAT_FINAL ===
+stat
+
+# No `ltp` here: `ltp -noff` only recognizes Yosys-internal FF cells, so it
+# treats mapped flip-flops (SB_DFF*, FDRE) as combinational logic -- on the
+# Xilinx netlist it even reports false loops. Logic depth is reported for the
+# generic flow only; real timing would need place-and-route (not installed).

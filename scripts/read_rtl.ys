@@ -1,0 +1,2 @@
+# Common RTL read step for every Yosys flow (Verilog-2001: no -sv flag).
+read_verilog -Irtl rtl/full_adder.v rtl/ripple_carry_adder.v rtl/alu_arith.v rtl/alu_logic.v rtl/alu_shifter.v rtl/alu_top.v

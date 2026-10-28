@@ -1,0 +1,14 @@
+# Xilinx 7-series mapping of alu_top (Yosys built-in synth_xilinx flow).
+# Run after scripts/read_rtl.ys and `chparam -set USE_RCA <0|1> alu_top`.
+# Output: mapped primitives (LUTn, CARRY4, MUXF7, FD*). Not a Vivado result.
+
+hierarchy -check -top alu_top
+synth_xilinx -top alu_top -flatten
+check -assert
+log === STAT_FINAL ===
+stat
+
+# No `ltp` here: `ltp -noff` only recognizes Yosys-internal FF cells, so it
+# treats mapped flip-flops (SB_DFF*, FDRE) as combinational logic -- on the
+# Xilinx netlist it even reports false loops. Logic depth is reported for the
+# generic flow only; real timing would need place-and-route (not installed).

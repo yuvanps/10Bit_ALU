@@ -1,0 +1,684 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `scripts/equiv.ys' --
+
+-- Executing script file `scripts/read_rtl.ys' --
+
+1. Executing Verilog-2005 frontend: rtl/full_adder.v
+Parsing Verilog input from `rtl/full_adder.v' to AST representation.
+Generating RTLIL representation for module `\full_adder'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/ripple_carry_adder.v
+Parsing Verilog input from `rtl/ripple_carry_adder.v' to AST representation.
+Generating RTLIL representation for module `\ripple_carry_adder'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/alu_arith.v
+Parsing Verilog input from `rtl/alu_arith.v' to AST representation.
+Generating RTLIL representation for module `\alu_arith'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/alu_logic.v
+Parsing Verilog input from `rtl/alu_logic.v' to AST representation.
+Generating RTLIL representation for module `\alu_logic'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/alu_shifter.v
+Parsing Verilog input from `rtl/alu_shifter.v' to AST representation.
+Generating RTLIL representation for module `\alu_shifter'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/alu_top.v
+Parsing Verilog input from `rtl/alu_top.v' to AST representation.
+Generating RTLIL representation for module `\alu_top'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: formal/equiv_wrappers.v
+Parsing Verilog input from `formal/equiv_wrappers.v' to AST representation.
+Generating RTLIL representation for module `\adder_ref'.
+Generating RTLIL representation for module `\rca_10'.
+Generating RTLIL representation for module `\ref_10'.
+Generating RTLIL representation for module `\alu_behav'.
+Generating RTLIL representation for module `\alu_struct'.
+Successfully finished Verilog frontend.
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+Parameter \DATA_WIDTH = 10
+
+8.1. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_shifter'.
+Parameter \DATA_WIDTH = 10
+Generating RTLIL representation for module `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+
+8.2. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_logic'.
+Parameter \DATA_WIDTH = 10
+Generating RTLIL representation for module `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 0
+
+8.3. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_arith'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 0
+Generating RTLIL representation for module `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith'.
+Parameter \WIDTH = 10
+
+8.4. Executing AST frontend in derive mode using pre-parsed AST for module `\ripple_carry_adder'.
+Parameter \WIDTH = 10
+Generating RTLIL representation for module `$paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010'.
+Parameter \WIDTH = 10
+
+8.5. Executing AST frontend in derive mode using pre-parsed AST for module `\adder_ref'.
+Parameter \WIDTH = 10
+Generating RTLIL representation for module `$paramod\adder_ref\WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 0
+
+8.6. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_top'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 0
+Generating RTLIL representation for module `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 1
+
+8.7. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_top'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 1
+Generating RTLIL representation for module `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top'.
+Parameter \DATA_WIDTH = 10
+Found cached RTLIL representation for module `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Found cached RTLIL representation for module `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 0
+Found cached RTLIL representation for module `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith'.
+Parameter \DATA_WIDTH = 10
+Found cached RTLIL representation for module `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Found cached RTLIL representation for module `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 1
+
+8.8. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_arith'.
+Parameter \DATA_WIDTH = 10
+Parameter \USE_RCA = 1
+Generating RTLIL representation for module `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith'.
+Parameter \WIDTH = 10
+Found cached RTLIL representation for module `$paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010'.
+
+9. Executing PROC pass (convert processes to netlists).
+
+9.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:99$230 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:46$222 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:138$219 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.
+Marked 2 switch rules as full_case in process $proc$rtl/alu_top.v:112$216 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:101$215 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:88$214 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:138$211 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.
+Marked 2 switch rules as full_case in process $proc$rtl/alu_top.v:112$208 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:101$207 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:88$206 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:99$200 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:46$192 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_logic.v:15$181 in module $paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_shifter.v:75$126 in module $paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:138$106 in module alu_top.
+Marked 2 switch rules as full_case in process $proc$rtl/alu_top.v:112$103 in module alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:101$102 in module alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_top.v:88$101 in module alu_top.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_shifter.v:75$46 in module alu_shifter.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_logic.v:15$18 in module alu_logic.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:99$14 in module alu_arith.
+Marked 1 switch rules as full_case in process $proc$rtl/alu_arith.v:46$6 in module alu_arith.
+Removed a total of 0 dead cases.
+
+9.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 69 assignments to connections.
+
+9.4. Executing PROC_INIT pass (extract init attributes).
+
+9.5. Executing PROC_ARST pass (detect async resets in processes).
+
+9.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 3 switches.
+<suppressed ~25 debug messages>
+
+9.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+     1/3: $1\overflow[0:0]
+     2/3: $1\carry[0:0]
+     3/3: $1\result[9:0]
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+     1/3: $1\cin[0:0]
+     2/3: $1\y[9:0]
+     3/3: $1\x[9:0]
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+     1/7: $0\valid_out[0:0]
+     2/7: $0\illegal_op[0:0]
+     3/7: $0\negative[0:0]
+     4/7: $0\zero[0:0]
+     5/7: $0\overflow[0:0]
+     6/7: $0\carry[0:0]
+     7/7: $0\result[9:0]
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+     1/6: $2\next_overflow[0:0]
+     2/6: $2\next_carry[0:0]
+     3/6: $2\next_result[9:0]
+     4/6: $1\next_overflow[0:0]
+     5/6: $1\next_carry[0:0]
+     6/6: $1\next_result[9:0]
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:101$215'.
+     1/1: $1\move_result[9:0]
+Creating decoders for process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:88$214'.
+     1/1: $1\legal[0:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+     1/7: $0\valid_out[0:0]
+     2/7: $0\illegal_op[0:0]
+     3/7: $0\negative[0:0]
+     4/7: $0\zero[0:0]
+     5/7: $0\overflow[0:0]
+     6/7: $0\carry[0:0]
+     7/7: $0\result[9:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+     1/6: $2\next_overflow[0:0]
+     2/6: $2\next_carry[0:0]
+     3/6: $2\next_result[9:0]
+     4/6: $1\next_overflow[0:0]
+     5/6: $1\next_carry[0:0]
+     6/6: $1\next_result[9:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:101$207'.
+     1/1: $1\move_result[9:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:88$206'.
+     1/1: $1\legal[0:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+     1/3: $1\overflow[0:0]
+     2/3: $1\carry[0:0]
+     3/3: $1\result[9:0]
+Creating decoders for process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+     1/3: $1\cin[0:0]
+     2/3: $1\y[9:0]
+     3/3: $1\x[9:0]
+Creating decoders for process `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_logic.v:15$181'.
+     1/1: $1\result[9:0]
+Creating decoders for process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+Creating decoders for process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+     1/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [9]
+     2/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [7]
+     3/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [6]
+     4/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [5]
+     5/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [4]
+     6/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [3]
+     7/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [2]
+     8/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [1]
+     9/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [0]
+    10/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.$result[9:0]$130 [8]
+    11/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.i[31:0]$132
+    12/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$122.v[9:0]$131
+    13/13: $1\result[9:0]
+Creating decoders for process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+     1/7: $0\valid_out[0:0]
+     2/7: $0\illegal_op[0:0]
+     3/7: $0\negative[0:0]
+     4/7: $0\zero[0:0]
+     5/7: $0\overflow[0:0]
+     6/7: $0\carry[0:0]
+     7/7: $0\result[9:0]
+Creating decoders for process `\alu_top.$proc$rtl/alu_top.v:112$103'.
+     1/6: $2\next_overflow[0:0]
+     2/6: $2\next_carry[0:0]
+     3/6: $2\next_result[9:0]
+     4/6: $1\next_overflow[0:0]
+     5/6: $1\next_carry[0:0]
+     6/6: $1\next_result[9:0]
+Creating decoders for process `\alu_top.$proc$rtl/alu_top.v:101$102'.
+     1/1: $1\move_result[9:0]
+Creating decoders for process `\alu_top.$proc$rtl/alu_top.v:88$101'.
+     1/1: $1\legal[0:0]
+Creating decoders for process `\alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+Creating decoders for process `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+     1/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [9]
+     2/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [7]
+     3/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [6]
+     4/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [5]
+     5/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [4]
+     6/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [3]
+     7/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [2]
+     8/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [1]
+     9/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [0]
+    10/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.$result[9:0]$50 [8]
+    11/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.i[31:0]$52
+    12/13: $1\reverse_bits$func$rtl/alu_shifter.v:84$42.v[9:0]$51
+    13/13: $1\result[9:0]
+Creating decoders for process `\alu_logic.$proc$rtl/alu_logic.v:15$18'.
+     1/1: $1\result[9:0]
+Creating decoders for process `\alu_arith.$proc$rtl/alu_arith.v:99$14'.
+     1/3: $1\overflow[0:0]
+     2/3: $1\carry[0:0]
+     3/3: $1\result[9:0]
+Creating decoders for process `\alu_arith.$proc$rtl/alu_arith.v:46$6'.
+     1/3: $1\cin[0:0]
+     2/3: $1\y[9:0]
+     3/3: $1\x[9:0]
+
+9.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\result' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\carry' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\overflow' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\cin' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\x' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.\y' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\next_result' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\next_carry' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\next_overflow' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\move_result' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:101$215'.
+No latch inferred for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\legal' from process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:88$214'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\next_result' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\next_carry' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\next_overflow' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\move_result' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:101$207'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\legal' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:88$206'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\result' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\carry' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\overflow' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\cin' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\x' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+No latch inferred for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.\y' from process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+No latch inferred for signal `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.\result' from process `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_logic.v:15$181'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:50$111.$result' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:50$123.$result' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:50$123.v' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:50$123.i' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\result' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:84$122.$result' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:84$122.v' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+No latch inferred for signal `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.\reverse_bits$func$rtl/alu_shifter.v:84$122.i' from process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+No latch inferred for signal `\alu_top.\next_result' from process `\alu_top.$proc$rtl/alu_top.v:112$103'.
+No latch inferred for signal `\alu_top.\next_carry' from process `\alu_top.$proc$rtl/alu_top.v:112$103'.
+No latch inferred for signal `\alu_top.\next_overflow' from process `\alu_top.$proc$rtl/alu_top.v:112$103'.
+No latch inferred for signal `\alu_top.\move_result' from process `\alu_top.$proc$rtl/alu_top.v:101$102'.
+No latch inferred for signal `\alu_top.\legal' from process `\alu_top.$proc$rtl/alu_top.v:88$101'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:50$31.$result' from process `\alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:50$43.$result' from process `\alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:50$43.v' from process `\alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:50$43.i' from process `\alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+No latch inferred for signal `\alu_shifter.\result' from process `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:84$42.$result' from process `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:84$42.v' from process `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+No latch inferred for signal `\alu_shifter.\reverse_bits$func$rtl/alu_shifter.v:84$42.i' from process `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+No latch inferred for signal `\alu_logic.\result' from process `\alu_logic.$proc$rtl/alu_logic.v:15$18'.
+No latch inferred for signal `\alu_arith.\result' from process `\alu_arith.$proc$rtl/alu_arith.v:99$14'.
+No latch inferred for signal `\alu_arith.\carry' from process `\alu_arith.$proc$rtl/alu_arith.v:99$14'.
+No latch inferred for signal `\alu_arith.\overflow' from process `\alu_arith.$proc$rtl/alu_arith.v:99$14'.
+No latch inferred for signal `\alu_arith.\cin' from process `\alu_arith.$proc$rtl/alu_arith.v:46$6'.
+No latch inferred for signal `\alu_arith.\x' from process `\alu_arith.$proc$rtl/alu_arith.v:46$6'.
+No latch inferred for signal `\alu_arith.\y' from process `\alu_arith.$proc$rtl/alu_arith.v:46$6'.
+
+9.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\result' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\carry' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\overflow' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\valid_out' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\zero' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\negative' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.\illegal_op' using process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\result' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\carry' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\overflow' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\valid_out' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$667' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\zero' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$668' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\negative' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$669' with positive edge clock.
+Creating register for signal `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.\illegal_op' using process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+  created $dff cell `$procdff$670' with positive edge clock.
+Creating register for signal `\alu_top.\result' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$671' with positive edge clock.
+Creating register for signal `\alu_top.\carry' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$672' with positive edge clock.
+Creating register for signal `\alu_top.\overflow' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$673' with positive edge clock.
+Creating register for signal `\alu_top.\valid_out' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$674' with positive edge clock.
+Creating register for signal `\alu_top.\zero' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$675' with positive edge clock.
+Creating register for signal `\alu_top.\negative' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$676' with positive edge clock.
+Creating register for signal `\alu_top.\illegal_op' using process `\alu_top.$proc$rtl/alu_top.v:138$106'.
+  created $dff cell `$procdff$677' with positive edge clock.
+
+9.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+9.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:99$230'.
+Found and cleaned up 1 empty switch in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.$proc$rtl/alu_arith.v:46$222'.
+Found and cleaned up 2 empty switches in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:138$219'.
+Found and cleaned up 2 empty switches in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:112$216'.
+Found and cleaned up 1 empty switch in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:101$215'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:101$215'.
+Found and cleaned up 1 empty switch in `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:88$214'.
+Removing empty process `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.$proc$rtl/alu_top.v:88$214'.
+Found and cleaned up 2 empty switches in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:138$211'.
+Found and cleaned up 2 empty switches in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:112$208'.
+Found and cleaned up 1 empty switch in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:101$207'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:101$207'.
+Found and cleaned up 1 empty switch in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:88$206'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.$proc$rtl/alu_top.v:88$206'.
+Found and cleaned up 1 empty switch in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:99$200'.
+Found and cleaned up 1 empty switch in `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+Removing empty process `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.$proc$rtl/alu_arith.v:46$192'.
+Found and cleaned up 1 empty switch in `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_logic.v:15$181'.
+Removing empty process `$paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_logic.v:15$181'.
+Removing empty process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:0$136'.
+Found and cleaned up 1 empty switch in `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+Removing empty process `$paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.$proc$rtl/alu_shifter.v:75$126'.
+Found and cleaned up 2 empty switches in `\alu_top.$proc$rtl/alu_top.v:138$106'.
+Removing empty process `alu_top.$proc$rtl/alu_top.v:138$106'.
+Found and cleaned up 2 empty switches in `\alu_top.$proc$rtl/alu_top.v:112$103'.
+Removing empty process `alu_top.$proc$rtl/alu_top.v:112$103'.
+Found and cleaned up 1 empty switch in `\alu_top.$proc$rtl/alu_top.v:101$102'.
+Removing empty process `alu_top.$proc$rtl/alu_top.v:101$102'.
+Found and cleaned up 1 empty switch in `\alu_top.$proc$rtl/alu_top.v:88$101'.
+Removing empty process `alu_top.$proc$rtl/alu_top.v:88$101'.
+Removing empty process `alu_shifter.$proc$rtl/alu_shifter.v:0$56'.
+Found and cleaned up 1 empty switch in `\alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+Removing empty process `alu_shifter.$proc$rtl/alu_shifter.v:75$46'.
+Found and cleaned up 1 empty switch in `\alu_logic.$proc$rtl/alu_logic.v:15$18'.
+Removing empty process `alu_logic.$proc$rtl/alu_logic.v:15$18'.
+Found and cleaned up 1 empty switch in `\alu_arith.$proc$rtl/alu_arith.v:99$14'.
+Removing empty process `alu_arith.$proc$rtl/alu_arith.v:99$14'.
+Found and cleaned up 1 empty switch in `\alu_arith.$proc$rtl/alu_arith.v:46$6'.
+Removing empty process `alu_arith.$proc$rtl/alu_arith.v:46$6'.
+Cleaned up 28 empty switches.
+
+9.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top.
+<suppressed ~11 debug messages>
+Optimizing module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top.
+<suppressed ~11 debug messages>
+Optimizing module $paramod\adder_ref\WIDTH=s32'00000000000000000000000000001010.
+Optimizing module $paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010.
+Optimizing module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010.
+Optimizing module $paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010.
+<suppressed ~20 debug messages>
+Optimizing module alu_struct.
+Optimizing module alu_behav.
+Optimizing module ref_10.
+Optimizing module rca_10.
+Optimizing module adder_ref.
+Optimizing module alu_top.
+<suppressed ~11 debug messages>
+Optimizing module alu_shifter.
+<suppressed ~20 debug messages>
+Optimizing module alu_logic.
+Optimizing module alu_arith.
+<suppressed ~3 debug messages>
+Optimizing module ripple_carry_adder.
+Optimizing module full_adder.
+
+10. Executing FLATTEN pass (flatten design).
+<suppressed ~34 debug messages>
+
+11. Executing MEMORY pass.
+
+11.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+11.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+11.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+11.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+11.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$auto$proc_rom.cc:150:do_switch$233'[0] in module `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top': no output FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$233'[0] in module `$paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top': no address FF found.
+Checking read port `$auto$proc_rom.cc:150:do_switch$237'[0] in module `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top': no output FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$237'[0] in module `$paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top': no address FF found.
+Checking read port `$flatten\u.$auto$proc_rom.cc:150:do_switch$233'[0] in module `\alu_struct': no output FF found.
+Checking read port address `$flatten\u.$auto$proc_rom.cc:150:do_switch$233'[0] in module `\alu_struct': no address FF found.
+Checking read port `$flatten\u.$auto$proc_rom.cc:150:do_switch$237'[0] in module `\alu_behav': no output FF found.
+Checking read port address `$flatten\u.$auto$proc_rom.cc:150:do_switch$237'[0] in module `\alu_behav': no address FF found.
+Checking read port `$auto$proc_rom.cc:150:do_switch$241'[0] in module `\alu_top': no output FF found.
+Checking read port address `$auto$proc_rom.cc:150:do_switch$241'[0] in module `\alu_top': no address FF found.
+
+11.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith..
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top..
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top..
+Finding unused cells or wires in module $paramod\adder_ref\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith..
+Finding unused cells or wires in module $paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module \alu_struct..
+Finding unused cells or wires in module \alu_behav..
+Finding unused cells or wires in module \ref_10..
+Finding unused cells or wires in module \rca_10..
+Finding unused cells or wires in module \adder_ref..
+Finding unused cells or wires in module \alu_top..
+Finding unused cells or wires in module \alu_shifter..
+Finding unused cells or wires in module \alu_logic..
+Finding unused cells or wires in module \alu_arith..
+Finding unused cells or wires in module \ripple_carry_adder..
+Finding unused cells or wires in module \full_adder..
+Removed 173 unused cells and 1245 unused wires.
+<suppressed ~192 debug messages>
+
+11.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+11.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+11.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith..
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top..
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith..
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top..
+Finding unused cells or wires in module $paramod\adder_ref\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module \adder_ref..
+Finding unused cells or wires in module \alu_arith..
+Finding unused cells or wires in module \alu_behav..
+Finding unused cells or wires in module \alu_logic..
+Finding unused cells or wires in module \alu_shifter..
+Finding unused cells or wires in module \alu_struct..
+Finding unused cells or wires in module \alu_top..
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \rca_10..
+Finding unused cells or wires in module \ref_10..
+Finding unused cells or wires in module \ripple_carry_adder..
+
+11.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+11.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $auto$proc_rom.cc:150:do_switch$237 in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top:
+  created 32 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $auto$proc_rom.cc:150:do_switch$233 in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top:
+  created 32 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $flatten\u.$auto$proc_rom.cc:150:do_switch$237 in module \alu_behav:
+  created 32 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $flatten\u.$auto$proc_rom.cc:150:do_switch$233 in module \alu_struct:
+  created 32 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $auto$proc_rom.cc:150:do_switch$241 in module \alu_top:
+  created 32 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_arith..
+Finding unused cells or wires in module $paramod$8318b6d453c9b4b4d9b613152772afc6604cc573\alu_top..
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_arith..
+Finding unused cells or wires in module $paramod$ed57bb70b72eb4e127796fe7f822642b9c4fdbb8\alu_top..
+Finding unused cells or wires in module $paramod\adder_ref\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\alu_logic\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\alu_shifter\DATA_WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module $paramod\ripple_carry_adder\WIDTH=s32'00000000000000000000000000001010..
+Finding unused cells or wires in module \adder_ref..
+Finding unused cells or wires in module \alu_arith..
+Finding unused cells or wires in module \alu_behav..
+Finding unused cells or wires in module \alu_logic..
+Finding unused cells or wires in module \alu_shifter..
+Finding unused cells or wires in module \alu_struct..
+Finding unused cells or wires in module \alu_top..
+Finding unused cells or wires in module \full_adder..
+Finding unused cells or wires in module \rca_10..
+Finding unused cells or wires in module \ref_10..
+Finding unused cells or wires in module \ripple_carry_adder..
+Removed 0 unused cells and 160 unused wires.
+<suppressed ~5 debug messages>
+
+===== Proof 1: ripple_carry_adder vs behavioral a+b+cin =====
+
+13. Executing MITER pass (creating miter circuit).
+Creating miter cell "miter_adder" with gold cell "ref_10" and gate cell "rca_10".
+
+13.1. Executing FLATTEN pass (flatten design).
+<suppressed ~2 debug messages>
+
+13.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter_adder.
+
+14. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up SAT problem:
+Final constraint equation: { } = { }
+Imported 57 cells to SAT database.
+Import proof for assert: $auto$miter.cc:269:create_miter_equiv$1158 when 1'1.
+Import show expression: \in_a
+Import show expression: \in_b
+Import show expression: \in_cin
+Import show expression: \trigger
+
+Solving problem with 562 variables and 1477 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+
+===== Proof 2: alu_top behavioral vs structural adder =====
+
+15. Executing MITER pass (creating miter circuit).
+Creating miter cell "miter_alu" with gold cell "alu_behav" and gate cell "alu_struct".
+
+15.1. Executing FLATTEN pass (flatten design).
+<suppressed ~2 debug messages>
+
+15.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter_alu.
+<suppressed ~38 debug messages>
+Removed 0 unused cells and 38 unused wires.
+
+16. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 362 cells to SAT database.
+Final init constraint equation: { \gold.u.illegal_op \gold.u.negative \gold.u.zero \gold.u.valid_out \gold.u.overflow \gold.u.carry \gold.u.result \gate.u.illegal_op \gate.u.negative \gate.u.zero \gate.u.valid_out \gate.u.overflow \gate.u.carry \gate.u.result } = 0
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 362 cells to SAT database.
+Import proof for assert: $auto$miter.cc:269:create_miter_equiv$1176 when 1'1.
+
+** Trying induction with length 1 **
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 362 cells to SAT database.
+Import proof for assert: $auto$miter.cc:269:create_miter_equiv$1176 when 1'1.
+
+[base case 1] Solving problem with 16118 variables and 43468 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 362 cells to SAT database.
+Import proof for assert: $auto$miter.cc:269:create_miter_equiv$1176 when 1'1.
+
+[induction step 1] Solving problem with 16054 variables and 43245 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+
+EQUIVALENCE PROVEN
+
+End of script. Logfile hash: 0cfa273b51, CPU: user 7.08s system 0.05s, MEM: 51.55 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 97% 2x sat (6 sec), 0% 3x opt_clean (0 sec), ...

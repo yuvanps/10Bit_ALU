@@ -1,0 +1,19 @@
+# Adder-only control experiment: the 10-bit adder synthesized on its own,
+# so the adder difference is not diluted by the rest of the ALU.
+# Expects the top module name in the yosys `-p` prefix via `hierarchy -top`.
+# Usage (see Makefile): read RTL + formal/equiv_wrappers.v, then
+#   hierarchy -top ref_10   (behavioral a+b+cin)   or
+#   hierarchy -top rca_10   (structural ripple-carry)
+# followed by `script scripts/synth_adder.ys`.
+
+flatten
+log === GENERIC ===
+design -save start
+synth -flatten
+log === STAT_GENERIC ===
+stat
+ltp -noff
+design -load start
+synth_ice40
+log === STAT_ICE40 ===
+stat
