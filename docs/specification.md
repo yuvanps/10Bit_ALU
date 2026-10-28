@@ -1,7 +1,8 @@
 # Stage 1 — Specification: Parameterized ALU (Verilog-2001)
 
-Status: **draft, awaiting review**. Nothing in this document has been implemented
-yet. Every "expected" number below is a prediction, not a measurement.
+Status: **approved 2026-10-28 and implemented**. The predictions below were written
+before any code existed and are left unchanged. §11 lists what changed during
+implementation, and README §10 compares the predictions with measurements.
 
 ---
 
@@ -500,3 +501,17 @@ Its 1081-cell osu035 count includes a 10×10 array multiplier, which this
 project does not have. The numbers **are not comparable** and will not be compared.
 Multiplication is out of scope for the requested op set. It is listed as a
 future extension, for example array vs Booth with the same synthesis comparison method.
+
+---
+
+## 11. Revisions during implementation
+
+| Item | Spec said | Implemented / measured | Why |
+|------|-----------|------------------------|-----|
+| Flip-flop count | 16 | **15** | `negative` ≡ `result[MSB]`, so Yosys merges the two registers (docs/synthesis.md §3) |
+| Files | `full_adder` inside `ripple_carry_adder.v` | separate `rtl/full_adder.v` | Verilator DECLFILENAME rule: one module per file |
+| Rotator stages | array `stage[0:W]` | one packed vector with `+:` slices | Yosys inferred a `$mem` cell from the wire array |
+| Formal | miter of `alu_arith` variants | miter of the full `alu_top` variants (sequential, induction) | stronger: covers registers too; wrappers in `formal/` |
+| Synthesis controls | — | adder-only and per-unit runs added | the whole-ALU numbers dilute the adder difference |
+| `ltp` on mapped netlists | planned for all flows | generic flow only | `ltp -noff` treats SB_DFF/FDRE as logic (false loops) |
+| Mutation test | "e.g. inverted carry" | 11 mutants, all detected | see docs/verification.md §5 |
