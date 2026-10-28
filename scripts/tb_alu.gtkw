@@ -1,0 +1,37 @@
+[*] GTKWave save file for `make gtkwave` (DATA_WIDTH = 10).
+[*] Top group: DUT interface. Bottom group: the scoreboard's expectation for
+[*] the same cycle -- after each rising edge, valid_out/result/flags should
+[*] equal exp_valid/exp_vec (exp_vec = {ILL, N, Z, V, C, result}).
+[dumpfile] "build/tb_alu.vcd"
+[timestart] 0
+@200
+-Clock / reset / request
+@28
+tb_alu.clk
+tb_alu.rst_n
+tb_alu.valid_in
+@22
+tb_alu.opcode[4:0]
+tb_alu.a[9:0]
+tb_alu.b[9:0]
+@200
+-Registered outputs (1 cycle later)
+@28
+tb_alu.valid_out
+@22
+tb_alu.result[9:0]
+@28
+tb_alu.carry
+tb_alu.overflow
+tb_alu.zero
+tb_alu.negative
+tb_alu.illegal_op
+@200
+-Scoreboard expectation
+@28
+tb_alu.exp_valid
+@22
+tb_alu.exp_vec[14:0]
+@24
+tb_alu.exp_txn
+tb_alu.checks_failed

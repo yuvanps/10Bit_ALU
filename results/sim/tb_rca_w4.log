@@ -1,0 +1,4 @@
+tb_ripple_carry_adder: WIDTH=4 mode=
+vectors 512, failures 0
+TEST PASSED
+tb/tb_ripple_carry_adder.v:87: $finish called at 512000 (1ps)

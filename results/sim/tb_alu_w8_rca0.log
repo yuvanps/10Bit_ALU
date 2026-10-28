@@ -1,0 +1,51 @@
+tb_alu: DATA_WIDTH=8 USE_RCA=0 NUM_RANDOM=20000 seed=20261028
+
+---------------- event counters (not formal coverage) ----------------
+  op 00000 ADD   :    692 txns   C=1:   322   V=1:   170
+  op 00001 SUB   :    669 txns   C=1:   357   V=1:   159
+  op 00010 INC   :    665 txns   C=1:    27   V=1:    26
+  op 00011 DEC   :    715 txns   C=1:   684   V=1:    33
+  op 00100 NEG   :    647 txns   C=1:    24   V=1:    27
+  op 00101 SLTU  :    698 txns   C=1:     0   V=1:     0
+  op 00110 SLT   :    703 txns   C=1:     0   V=1:     0
+  op 00111 EQ    :    712 txns   C=1:     0   V=1:     0
+  op 01000 AND   :    700 txns   C=1:     0   V=1:     0
+  op 01001 OR    :    739 txns   C=1:     0   V=1:     0
+  op 01010 XOR   :    676 txns   C=1:     0   V=1:     0
+  op 01011 NOT   :    690 txns   C=1:     0   V=1:     0
+  op 01100 NAND  :    694 txns   C=1:     0   V=1:     0
+  op 01101 NOR   :    639 txns   C=1:     0   V=1:     0
+  op 01110 XNOR  :    688 txns   C=1:     0   V=1:     0
+  op 01111 ILLEG :    260 txns   C=1:     0   V=1:     0
+  op 10000 SLL   :    710 txns   C=1:     0   V=1:     0
+  op 10001 SRL   :    723 txns   C=1:     0   V=1:     0
+  op 10010 SRA   :    718 txns   C=1:     0   V=1:     0
+  op 10011 ROL   :    982 txns   C=1:     0   V=1:     0
+  op 10100 ROR   :    971 txns   C=1:     0   V=1:     0
+  op 10101 ILLEG :    264 txns   C=1:     0   V=1:     0
+  op 10110 ILLEG :    245 txns   C=1:     0   V=1:     0
+  op 10111 ILLEG :    281 txns   C=1:     0   V=1:     0
+  op 11000 PASSA :    691 txns   C=1:     0   V=1:     0
+  op 11001 PASSB :    751 txns   C=1:     0   V=1:     0
+  op 11010 CLR   :    692 txns   C=1:     0   V=1:     0
+  op 11011 ILLEG :    266 txns   C=1:     0   V=1:     0
+  op 11100 ILLEG :    253 txns   C=1:     0   V=1:     0
+  op 11101 ILLEG :    276 txns   C=1:     0   V=1:     0
+  op 11110 ILLEG :    261 txns   C=1:     0   V=1:     0
+  op 11111 ILLEG :    262 txns   C=1:     0   V=1:     0
+  ADD overflow pos+pos->neg 75, neg+neg->pos 95
+  SUB overflow pos-neg->neg 69, neg-pos->pos 90
+  SUB borrow (C=0) 312, no borrow (C=1) 357
+  zero results: arith 1537 logic 330 shift 1639 move 741
+  shift amount bins [0, 1, W-1, W, >W]:
+    SLL      29    29     7     6   612
+    SRL      35    27     6     8   611
+    SRA      32    30     5     7   607
+    ROL      34    40     8     7   857
+    ROR      36    29    10     7   848
+  interface: reset-with-valid 24, reset-mid-stream 26, back-to-back 15229,
+             gap=1 2728, gap>=3 240, hold-after-txn 3678
+-----------------------------------------------------------------------
+cycles checked 23955, transactions 18933, check failures 0, model failures 0, holes 0
+TEST PASSED
+tb/tb_alu.v:651: $finish called at 239550000 (1ps)

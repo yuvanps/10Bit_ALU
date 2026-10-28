@@ -1,0 +1,13 @@
+mutant               verdict   injected bug
+sub_overflow_raw_b   KILLED    overflow uses raw b instead of the adder input ~b (334 check failures)
+slt_no_ovf_fix       KILLED    SLT uses the sign bit without the overflow correction (55 check failures)
+carry_is_borrow      KILLED    carry flag polarity inverted (x86 borrow convention) (1067 check failures)
+sra_logical          KILLED    SRA operand unsigned, so >>> is a logical shift (111 check failures)
+rotate_stage_wrong   KILLED    rotator stage constants computed mod W+1 (2125 check failures)
+zero_on_illegal      KILLED    zero flag not gated for illegal opcodes (1200 check failures)
+no_hold_on_idle      KILLED    registers load every cycle instead of holding (725 check failures)
+valid_stuck          KILLED    valid_out ignores valid_in (799 check failures)
+reset_keeps_result   KILLED    reset does not clear result (7 check failures)
+rca_carry_chain      KILLED    full-adder carry ignores cin (763 check failures)
+rca_cin_dropped      KILLED    RCA ignores carry-in (breaks SUB/INC/NEG) (652 check failures)
+mutants: 11, killed: 11, survived: 0, broken: 0

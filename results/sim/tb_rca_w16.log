@@ -1,0 +1,4 @@
+tb_ripple_carry_adder: WIDTH=16 mode=corner+random
+vectors 200072, failures 0
+TEST PASSED
+tb/tb_ripple_carry_adder.v:87: $finish called at 200072000 (1ps)
